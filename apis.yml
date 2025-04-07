@@ -5,7 +5,10 @@ apis:
   - aid: firecrawl:firecrawl
     name: Firecrawl
     tags:
-      - API
+      - Crawling
+      - Scraping
+      - Data Extraction
+      - URLs
     humanURL: https://docs.firecrawl.dev/api-reference/introduction
     properties:
       - url: https://docs.firecrawl.dev/api-reference/introduction
@@ -18,7 +21,10 @@ apis:
       data for each. No sitemap required. Check out our documentation.
 name: Firecrawl
 tags:
-  - API
+  - Crawling
+  - Scraping
+  - Data Extraction
+  - URLs
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
