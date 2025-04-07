@@ -34,6 +34,22 @@ Empower your AI apps with clean data from any website. Featuring advanced scrapi
 
 - [Documentation](https://docs.firecrawl.dev/api-reference/introduction)
 
+## Common Properties
+
+- [Playground](https://www.firecrawl.dev/playground)
+- [Pricing](https://www.firecrawl.dev/pricing)
+- [ChangeLog](https://www.firecrawl.dev/changelog)
+- [ChangeLog](https://www.firecrawl.dev/changelog)
+- [PrivacyPolicy](https://www.firecrawl.dev/privacy-policy)
+- [TermsOfService](https://www.firecrawl.dev/terms-of-service)
+- [Documentation](https://docs.firecrawl.dev/introduction)
+- [Blog](https://www.firecrawl.dev/blog)
+- [Affiliate](https://www.firecrawl.dev/affiliate-program)
+- [SDKs](https://docs.firecrawl.dev/sdks/overview)
+- [Integrations](https://docs.firecrawl.dev/integrations)
+- [RateLimits](https://docs.firecrawl.dev/rate-limits)
+- [Blog](https://www.firecrawl.dev/blog)
+
 ## Maintainers
 
 **FN:** Kin Lane
