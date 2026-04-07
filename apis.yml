@@ -6,8 +6,8 @@ apis:
     name: Firecrawl
     tags:
       - Crawling
-      - Scraping
       - Data Extraction
+      - Scraping
       - URLs
     humanURL: https://docs.firecrawl.dev/api-reference/introduction
     properties:
@@ -22,8 +22,8 @@ apis:
 name: Firecrawl
 tags:
   - Crawling
-  - Scraping
   - Data Extraction
+  - Scraping
   - URLs
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
