@@ -6,7 +6,7 @@ description: >-
   service that takes a URL, crawls it, and converts it into clean markdown or
   structured data. We crawl all accessible subpages and give you clean data for
   each. No sitemap required.
-type: Contract
+kind: contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2025-02-12'
@@ -50,7 +50,7 @@ common:
     url: https://www.firecrawl.dev
   - type: Documentation
     url: https://docs.firecrawl.dev/introduction
-  - type: API Reference
+  - type: APIReference
     url: https://docs.firecrawl.dev/api-reference/introduction
   - type: Playground
     url: https://www.firecrawl.dev/playground
