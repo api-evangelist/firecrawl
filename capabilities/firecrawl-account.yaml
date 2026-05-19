@@ -1,0 +1,91 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Firecrawl API — Account
+  description: 'Firecrawl API — Account. 1 operations. Lead operation: List recent API activity. Self-contained Naftiko capability
+    covering one Firecrawl business surface.'
+  tags:
+  - Firecrawl
+  - Account
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FIRECRAWL_API_KEY: FIRECRAWL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: firecrawl-account
+    baseUri: https://api.firecrawl.dev/v2
+    description: Firecrawl API — Account business capability. Self-contained, no shared references.
+    resources:
+    - name: team-activity
+      path: /team/activity
+      operations:
+      - name: getactivity
+        method: GET
+        description: List recent API activity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: endpoint
+          in: query
+          type: string
+          description: Filter by endpoint
+        - name: limit
+          in: query
+          type: integer
+          description: Maximum number of results per page
+        - name: cursor
+          in: query
+          type: string
+          description: Cursor for pagination. Use the cursor value from the previous response.
+    authentication:
+      type: bearer
+      token: '{{env.FIRECRAWL_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: firecrawl-account-rest
+    port: 8080
+    description: REST adapter for Firecrawl API — Account. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/team/activity
+      name: team-activity
+      description: REST surface for team-activity.
+      operations:
+      - method: GET
+        name: getactivity
+        description: List recent API activity
+        call: firecrawl-account.getactivity
+        with:
+          endpoint: rest.endpoint
+          limit: rest.limit
+          cursor: rest.cursor
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: firecrawl-account-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Firecrawl API — Account. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-recent-api-activity
+      description: List recent API activity
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: firecrawl-account.getactivity
+      with:
+        endpoint: tools.endpoint
+        limit: tools.limit
+        cursor: tools.cursor
+      outputParameters:
+      - type: object
+        mapping: $.

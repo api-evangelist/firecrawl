@@ -1,0 +1,205 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Firecrawl API — Browser
+  description: 'Firecrawl API — Browser. 4 operations. Lead operation: Create a browser session. Self-contained Naftiko capability
+    covering one Firecrawl business surface.'
+  tags:
+  - Firecrawl
+  - Browser
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FIRECRAWL_API_KEY: FIRECRAWL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: firecrawl-browser
+    baseUri: https://api.firecrawl.dev/v2
+    description: Firecrawl API — Browser business capability. Self-contained, no shared references.
+    resources:
+    - name: browser
+      path: /browser
+      operations:
+      - name: createbrowsersession
+        method: POST
+        description: Create a browser session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listbrowsersessions
+        method: GET
+        description: List browser sessions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: status
+          in: query
+          type: string
+          description: Filter sessions by status
+    - name: browser-sessionId
+      path: /browser/{sessionId}
+      operations:
+      - name: deletebrowsersession
+        method: DELETE
+        description: Delete a browser session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          description: The browser session ID
+          required: true
+    - name: browser-sessionId-execute
+      path: /browser/{sessionId}/execute
+      operations:
+      - name: executebrowsercode
+        method: POST
+        description: Execute code in a browser session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sessionId
+          in: path
+          type: string
+          description: The browser session ID
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.FIRECRAWL_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: firecrawl-browser-rest
+    port: 8080
+    description: REST adapter for Firecrawl API — Browser. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/browser
+      name: browser
+      description: REST surface for browser.
+      operations:
+      - method: POST
+        name: createbrowsersession
+        description: Create a browser session
+        call: firecrawl-browser.createbrowsersession
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listbrowsersessions
+        description: List browser sessions
+        call: firecrawl-browser.listbrowsersessions
+        with:
+          status: rest.status
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/browser/{sessionid}
+      name: browser-sessionid
+      description: REST surface for browser-sessionId.
+      operations:
+      - method: DELETE
+        name: deletebrowsersession
+        description: Delete a browser session
+        call: firecrawl-browser.deletebrowsersession
+        with:
+          sessionId: rest.sessionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/browser/{sessionid}/execute
+      name: browser-sessionid-execute
+      description: REST surface for browser-sessionId-execute.
+      operations:
+      - method: POST
+        name: executebrowsercode
+        description: Execute code in a browser session
+        call: firecrawl-browser.executebrowsercode
+        with:
+          sessionId: rest.sessionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: firecrawl-browser-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Firecrawl API — Browser. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: create-browser-session
+      description: Create a browser session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: firecrawl-browser.createbrowsersession
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-browser-sessions
+      description: List browser sessions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: firecrawl-browser.listbrowsersessions
+      with:
+        status: tools.status
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-browser-session
+      description: Delete a browser session
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: firecrawl-browser.deletebrowsersession
+      with:
+        sessionId: tools.sessionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: execute-code-browser-session
+      description: Execute code in a browser session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: firecrawl-browser.executebrowsercode
+      with:
+        sessionId: tools.sessionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
