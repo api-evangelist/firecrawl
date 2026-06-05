@@ -1,8 +1,9 @@
 aid: firecrawl
 name: Firecrawl
-description: Empower your AI apps with clean data from any website. Featuring advanced scraping, crawling, and data extraction
-  capabilities. Firecrawl is an API service that takes a URL, crawls it, and converts it into clean markdown or structured
-  data. We crawl all accessible subpages and give you clean data for each. No sitemap required.
+description: >-
+  Empower your AI apps with clean data from any website. Featuring advanced scraping, crawling, and data extraction
+  capabilities. Firecrawl is an API service that takes a URL, crawls it, and converts it into clean markdown or
+  structured data. We crawl all accessible subpages and give you clean data for each. No sitemap required.
 kind: contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -21,44 +22,25 @@ specificationVersion: '0.19'
 apis:
   - aid: firecrawl:firecrawl
     name: Firecrawl API
-    description: The Firecrawl v2 API offers scrape, crawl, map, search, parse, batch scrape, extract, agent, and headless browser
+    description: >-
+      The Firecrawl v2 API offers scrape, crawl, map, search, parse, batch scrape, extract, agent, and headless browser
       endpoints for turning any URL into clean markdown or structured data for AI applications.
     humanURL: https://docs.firecrawl.dev/api-reference/introduction
     baseURL: https://api.firecrawl.dev/v2
     tags:
-    - Crawling
-    - Data Extraction
-    - Scraping
-    - URLs
-    - AI
-    - Markdown
+      - Crawling
+      - Data Extraction
+      - Scraping
+      - URLs
+      - AI
+      - Markdown
     properties:
-    - type: Documentation
-      url: https://docs.firecrawl.dev/api-reference/introduction
-    - type: OpenAPI
-      url: openapi/firecrawl-openapi-original.json
-    - type: Authentication
-      url: https://docs.firecrawl.dev/api-reference/introduction
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-account.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-agent.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-billing.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-browser.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-crawling.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-extraction.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-mapping.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-miscellaneous.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-scraping.yaml
-    - type: NaftikoCapability
-      url: capabilities/firecrawl-search.yaml
+      - type: Documentation
+        url: https://docs.firecrawl.dev/api-reference/introduction
+      - type: OpenAPI
+        url: openapi/firecrawl-openapi-original.json
+      - type: Authentication
+        url: https://docs.firecrawl.dev/api-reference/introduction
 common:
   - type: GitHubOrganization
     url: https://github.com/firecrawl
