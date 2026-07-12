@@ -42,6 +42,12 @@ apis:
       - type: Authentication
         url: https://docs.firecrawl.dev/api-reference/introduction
 common:
+  - type: VulnerabilityDisclosure
+    url: security/firecrawl-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/firecrawl-domain-security.yml
+  - type: Authentication
+    url: authentication/firecrawl-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/firecrawl
   - type: LinkedIn
