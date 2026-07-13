@@ -2,13 +2,14 @@
   "repo": "firecrawl",
   "feeds": [
     {
-      "source": "https://www.firecrawl.dev/blog",
-      "feed_url": "",
+      "source": "https://www.firecrawl.dev/terms-of-service",
+      "feed_url": "https://www.firecrawl.dev/terms-of-service",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
-  "post_count": 2,
-  "fetched": "2026-06-27T12:41:03Z",
+  "post_count": 3,
+  "fetched": "2026-07-11T11:50:51Z",
   "agent_pulled": "2026-06-27"
 }
