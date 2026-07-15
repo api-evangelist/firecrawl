@@ -42,6 +42,8 @@ apis:
       - type: Authentication
         url: https://docs.firecrawl.dev/api-reference/introduction
 common:
+  - type: AgenticAccess
+    url: agentic-access/firecrawl-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/firecrawl-vulnerability-disclosure.yml
   - type: DomainSecurity
