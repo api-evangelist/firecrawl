@@ -1,0 +1,292 @@
+openapi: 3.0.0
+info:
+  title: Firecrawl Account Browser API
+  version: v2
+  description: API for interacting with Firecrawl services to perform web scraping and crawling tasks.
+  contact:
+    name: Firecrawl Support
+    url: https://firecrawl.dev/support
+    email: support@firecrawl.dev
+servers:
+- url: https://api.firecrawl.dev/v2
+security:
+- bearerAuth: []
+tags:
+- name: Browser
+paths:
+  /browser:
+    post:
+      summary: Create a browser session
+      operationId: createBrowserSession
+      tags:
+      - Browser
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ttl:
+                  type: integer
+                  default: 300
+                  minimum: 30
+                  maximum: 3600
+                  description: Total time-to-live in seconds for the browser session
+                activityTtl:
+                  type: integer
+                  minimum: 10
+                  maximum: 3600
+                  description: Time in seconds before the session is destroyed due to inactivity
+                streamWebView:
+                  type: boolean
+                  default: true
+                  description: Whether to stream a live view of the browser
+                profile:
+                  type: object
+                  description: Enable persistent storage across browser sessions. Data saved in one session can be loaded in a later session using the same name.
+                  properties:
+                    name:
+                      type: string
+                      minLength: 1
+                      maxLength: 128
+                      description: A name for the profile. Sessions with the same name share storage.
+                    saveChanges:
+                      type: boolean
+                      default: true
+                      description: When true, browser state is saved back to the profile on close. Set to false to load existing data without writing. Multiple non-saving sessions are allowed but only one saving session at a time.
+                  required:
+                  - name
+      responses:
+        '200':
+          description: Browser session created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  id:
+                    type: string
+                    description: The unique session identifier
+                  cdpUrl:
+                    type: string
+                    description: WebSocket URL for Chrome DevTools Protocol access
+                  liveViewUrl:
+                    type: string
+                    description: URL to view the browser session in real time
+                  interactiveLiveViewUrl:
+                    type: string
+                    description: URL to interact with the browser session in real time (click, type, scroll)
+                  expiresAt:
+                    type: string
+                    format: date-time
+                    description: When the session will expire based on TTL
+        '402':
+          description: Payment required
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Payment required to access this resource.
+    get:
+      summary: List browser sessions
+      operationId: listBrowserSessions
+      tags:
+      - Browser
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - active
+          - destroyed
+        description: Filter sessions by status
+      responses:
+        '200':
+          description: List of browser sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  sessions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        status:
+                          type: string
+                          enum:
+                          - active
+                          - destroyed
+                        cdpUrl:
+                          type: string
+                        liveViewUrl:
+                          type: string
+                        interactiveLiveViewUrl:
+                          type: string
+                          description: URL to interact with the browser session in real time (click, type, scroll)
+                        streamWebView:
+                          type: boolean
+                        createdAt:
+                          type: string
+                          format: date-time
+                        lastActivity:
+                          type: string
+                          format: date-time
+        '402':
+          description: Payment required
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Payment required to access this resource.
+  /browser/{sessionId}/execute:
+    post:
+      summary: Execute code in a browser session
+      operationId: executeBrowserCode
+      tags:
+      - Browser
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The browser session ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - code
+              properties:
+                code:
+                  type: string
+                  minLength: 1
+                  maxLength: 100000
+                  description: Code to execute in the browser sandbox
+                language:
+                  type: string
+                  enum:
+                  - python
+                  - node
+                  - bash
+                  default: node
+                  description: Language of the code to execute. Use `node` for JavaScript or `bash` for agent-browser CLI commands.
+                timeout:
+                  type: integer
+                  minimum: 1
+                  maximum: 300
+                  description: Execution timeout in seconds
+      responses:
+        '200':
+          description: Code executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  stdout:
+                    type: string
+                    nullable: true
+                    description: Standard output from the code execution
+                  result:
+                    type: string
+                    nullable: true
+                    description: Standard output (alias for stdout)
+                  stderr:
+                    type: string
+                    nullable: true
+                    description: Standard error output from the code execution
+                  exitCode:
+                    type: integer
+                    nullable: true
+                    description: Exit code of the executed process
+                  killed:
+                    type: boolean
+                    description: Whether the process was killed due to timeout
+                  error:
+                    type: string
+                    nullable: true
+                    description: Error message if the code raised an exception
+        '402':
+          description: Payment required
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Payment required to access this resource.
+  /browser/{sessionId}:
+    delete:
+      summary: Delete a browser session
+      operationId: deleteBrowserSession
+      tags:
+      - Browser
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The browser session ID
+      responses:
+        '200':
+          description: Browser session deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  sessionDurationMs:
+                    type: integer
+                    description: Total session duration in milliseconds
+                  creditsBilled:
+                    type: number
+                    description: Number of credits billed for the session
+        '402':
+          description: Payment required
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Payment required to access this resource.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
