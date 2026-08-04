@@ -1,0 +1,32 @@
+{
+  "provider": "firecrawl",
+  "sources": [
+    "firecrawl-account-api-openapi.yml",
+    "firecrawl-agent-api-openapi.yml",
+    "firecrawl-billing-api-openapi.yml",
+    "firecrawl-browser-api-openapi.yml",
+    "firecrawl-crawling-api-openapi.yml",
+    "firecrawl-extraction-api-openapi.yml",
+    "firecrawl-mapping-api-openapi.yml",
+    "firecrawl-miscellaneous-api-openapi.yml",
+    "firecrawl-scraping-api-openapi.yml",
+    "firecrawl-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "firecrawl-account-api-openapi.yml",
+    "firecrawl-agent-api-openapi.yml",
+    "firecrawl-billing-api-openapi.yml",
+    "firecrawl-browser-api-openapi.yml",
+    "firecrawl-crawling-api-openapi.yml",
+    "firecrawl-extraction-api-openapi.yml",
+    "firecrawl-mapping-api-openapi.yml",
+    "firecrawl-miscellaneous-api-openapi.yml",
+    "firecrawl-scraping-api-openapi.yml",
+    "firecrawl-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
