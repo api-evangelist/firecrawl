@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Firecrawl Account Crawling API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Crawling",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the status of a crawl job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/crawl/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the crawl job"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get the status of a crawl job"
+        },
+        {
+          "info": {
+            "name": "Cancel a crawl job",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.firecrawl.dev/v2/crawl/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the crawl job"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Cancel a crawl job"
+        },
+        {
+          "info": {
+            "name": "Get the errors of a crawl job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/crawl/:id/errors",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the crawl job"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get the errors of a crawl job"
+        },
+        {
+          "info": {
+            "name": "Crawl multiple URLs based on options",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.firecrawl.dev/v2/crawl",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Crawl multiple URLs based on options"
+        },
+        {
+          "info": {
+            "name": "Preview crawl parameters generated from natural language prompt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.firecrawl.dev/v2/crawl/params-preview",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Preview crawl parameters generated from natural language prompt"
+        },
+        {
+          "info": {
+            "name": "Get all active crawls for the authenticated team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/crawl/active",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get all active crawls for the authenticated team"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

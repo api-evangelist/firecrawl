@@ -1,0 +1,348 @@
+{
+  "item": [
+    {
+      "id": "6febefe9-6ade-4e9b-ad6f-6604891ffca6",
+      "name": "Extraction",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35ec1345-c401-4162-b26b-779f57555012",
+          "name": "Extract structured data from pages using LLMs",
+          "request": {
+            "name": "Extract structured data from pages using LLMs",
+            "description": {},
+            "url": {
+              "path": [
+                "extract"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"prompt\": \"<string>\",\n  \"schema\": \"<object>\",\n  \"enableWebSearch\": false,\n  \"ignoreSitemap\": false,\n  \"includeSubdomains\": true,\n  \"showSources\": false,\n  \"scrapeOptions\": {\n    \"formats\": [\n      \"markdown\"\n    ],\n    \"onlyMainContent\": true,\n    \"onlyCleanContent\": false,\n    \"includeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"excludeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxAge\": 172800000,\n    \"minAge\": \"<integer>\",\n    \"headers\": \"<object>\",\n    \"waitFor\": 0,\n    \"mobile\": false,\n    \"skipTlsVerification\": true,\n    \"timeout\": 60000,\n    \"parsers\": [\n      \"pdf\"\n    ],\n    \"actions\": [\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      }\n    ],\n    \"location\": {\n      \"country\": \"US\",\n      \"languages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"removeBase64Images\": true,\n    \"blockAds\": true,\n    \"proxy\": \"auto\",\n    \"storeInCache\": true,\n    \"lockdown\": false,\n    \"profile\": {\n      \"name\": \"<string>\",\n      \"saveChanges\": true\n    }\n  },\n  \"ignoreInvalidURLs\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2a7ab53-b5c2-4a19-94fd-4e6145b4eeca",
+              "name": "Successful extraction",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"prompt\": \"<string>\",\n  \"schema\": \"<object>\",\n  \"enableWebSearch\": false,\n  \"ignoreSitemap\": false,\n  \"includeSubdomains\": true,\n  \"showSources\": false,\n  \"scrapeOptions\": {\n    \"formats\": [\n      \"markdown\"\n    ],\n    \"onlyMainContent\": true,\n    \"onlyCleanContent\": false,\n    \"includeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"excludeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxAge\": 172800000,\n    \"minAge\": \"<integer>\",\n    \"headers\": \"<object>\",\n    \"waitFor\": 0,\n    \"mobile\": false,\n    \"skipTlsVerification\": true,\n    \"timeout\": 60000,\n    \"parsers\": [\n      \"pdf\"\n    ],\n    \"actions\": [\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      }\n    ],\n    \"location\": {\n      \"country\": \"US\",\n      \"languages\": [\n        \"en-US\",\n        \"en-US\"\n      ]\n    },\n    \"removeBase64Images\": true,\n    \"blockAds\": true,\n    \"proxy\": \"auto\",\n    \"storeInCache\": true,\n    \"lockdown\": false,\n    \"profile\": {\n      \"name\": \"<string>\",\n      \"saveChanges\": true\n    }\n  },\n  \"ignoreInvalidURLs\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"id\": \"string\",\n  \"invalidURLs\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea29762e-c780-4e4e-9ec1-7c24ac8bd848",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"prompt\": \"<string>\",\n  \"schema\": \"<object>\",\n  \"enableWebSearch\": false,\n  \"ignoreSitemap\": false,\n  \"includeSubdomains\": true,\n  \"showSources\": false,\n  \"scrapeOptions\": {\n    \"formats\": [\n      \"markdown\"\n    ],\n    \"onlyMainContent\": true,\n    \"onlyCleanContent\": false,\n    \"includeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"excludeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxAge\": 172800000,\n    \"minAge\": \"<integer>\",\n    \"headers\": \"<object>\",\n    \"waitFor\": 0,\n    \"mobile\": false,\n    \"skipTlsVerification\": true,\n    \"timeout\": 60000,\n    \"parsers\": [\n      \"pdf\"\n    ],\n    \"actions\": [\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      }\n    ],\n    \"location\": {\n      \"country\": \"US\",\n      \"languages\": [\n        \"en-US\",\n        \"en-US\"\n      ]\n    },\n    \"removeBase64Images\": true,\n    \"blockAds\": true,\n    \"proxy\": \"auto\",\n    \"storeInCache\": true,\n    \"lockdown\": false,\n    \"profile\": {\n      \"name\": \"<string>\",\n      \"saveChanges\": true\n    }\n  },\n  \"ignoreInvalidURLs\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Invalid input data.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ecfab536-1094-48ed-b43b-1c2c152be356",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"prompt\": \"<string>\",\n  \"schema\": \"<object>\",\n  \"enableWebSearch\": false,\n  \"ignoreSitemap\": false,\n  \"includeSubdomains\": true,\n  \"showSources\": false,\n  \"scrapeOptions\": {\n    \"formats\": [\n      \"markdown\"\n    ],\n    \"onlyMainContent\": true,\n    \"onlyCleanContent\": false,\n    \"includeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"excludeTags\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"maxAge\": 172800000,\n    \"minAge\": \"<integer>\",\n    \"headers\": \"<object>\",\n    \"waitFor\": 0,\n    \"mobile\": false,\n    \"skipTlsVerification\": true,\n    \"timeout\": 60000,\n    \"parsers\": [\n      \"pdf\"\n    ],\n    \"actions\": [\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"milliseconds\": \"<integer>\"\n      }\n    ],\n    \"location\": {\n      \"country\": \"US\",\n      \"languages\": [\n        \"en-US\",\n        \"en-US\"\n      ]\n    },\n    \"removeBase64Images\": true,\n    \"blockAds\": true,\n    \"proxy\": \"auto\",\n    \"storeInCache\": true,\n    \"lockdown\": false,\n    \"profile\": {\n      \"name\": \"<string>\",\n      \"saveChanges\": true\n    }\n  },\n  \"ignoreInvalidURLs\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9573a58b-920e-4371-9bc5-a432110de1a2",
+          "name": "Get the status of an extract job",
+          "request": {
+            "name": "Get the status of an extract job",
+            "description": {},
+            "url": {
+              "path": [
+                "extract",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The ID of the extract job"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "436d82bf-f823-4068-ad13-10db0ad9e840",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "extract",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the extract job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"data\": {},\n  \"status\": \"cancelled\",\n  \"expiresAt\": \"1992-08-11T15:55:42.991Z\",\n  \"tokensUsed\": 7706\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.firecrawl.dev/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f3a00900-6e63-47f1-9b87-4c24020cb408",
+    "name": "Firecrawl Account Extraction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for interacting with Firecrawl services to perform web scraping and crawling tasks.\n\nContact Support:\n Name: Firecrawl Support\n Email: support@firecrawl.dev",
+      "type": "text/plain"
+    }
+  }
+}

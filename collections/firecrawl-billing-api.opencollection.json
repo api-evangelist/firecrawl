@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Firecrawl Account Billing API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Billing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get remaining credits for the authenticated team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/team/credit-usage",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get remaining credits for the authenticated team"
+        },
+        {
+          "info": {
+            "name": "Get historical credit usage for the authenticated team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/team/credit-usage/historical",
+            "params": [
+              {
+                "name": "byApiKey",
+                "value": "",
+                "type": "query",
+                "description": "Get historical credit usage by API key"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get historical credit usage for the authenticated team"
+        },
+        {
+          "info": {
+            "name": "Get remaining tokens for the authenticated team (Extract only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/team/token-usage",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get remaining tokens for the authenticated team (Extract only)"
+        },
+        {
+          "info": {
+            "name": "Get historical token usage for the authenticated team (Extract only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/team/token-usage/historical",
+            "params": [
+              {
+                "name": "byApiKey",
+                "value": "",
+                "type": "query",
+                "description": "Get historical token usage by API key"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get historical token usage for the authenticated team (Extract only)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

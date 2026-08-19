@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "ee3c5946-5554-4921-83ab-b81b107d509e",
+      "name": "Mapping",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "286cfe79-ecc8-465f-b2a0-18f770924f4b",
+          "name": "Map multiple URLs based on options",
+          "request": {
+            "name": "Map multiple URLs based on options",
+            "description": {},
+            "url": {
+              "path": [
+                "map"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<uri>\",\n  \"search\": \"<string>\",\n  \"sitemap\": \"include\",\n  \"includeSubdomains\": true,\n  \"ignoreQueryParameters\": true,\n  \"ignoreCache\": false,\n  \"limit\": 5000,\n  \"timeout\": \"<integer>\",\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c8e4102-b0f5-46b8-b0d0-0bdf6b9e5b66",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "map"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<string>\",\n  \"search\": \"<string>\",\n  \"sitemap\": \"include\",\n  \"includeSubdomains\": true,\n  \"ignoreQueryParameters\": true,\n  \"ignoreCache\": false,\n  \"limit\": 5000,\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\"\n    ]\n  },\n  \"timeout\": 60000\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"links\": [\n    {\n      \"url\": \"http://tJfiqp.ljoU0.RI,ZNlEA.ovNVQahHSjN,E1SHgEmQphy+EBGLzUBvCc6rt0DnroAv8yVisAjP1d0CiAjGbLhIHLBFJyRSauG\",\n      \"title\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"url\": \"https://cuJnKmakxeQOqNvEq.ppkwe+9-gule\",\n      \"title\": \"string\",\n      \"description\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "29c078f1-8b32-4441-955a-30fa7f55d1d1",
+              "name": "Payment required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "map"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<string>\",\n  \"search\": \"<string>\",\n  \"sitemap\": \"include\",\n  \"includeSubdomains\": true,\n  \"ignoreQueryParameters\": true,\n  \"ignoreCache\": false,\n  \"limit\": 5000,\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\"\n    ]\n  },\n  \"timeout\": 60000\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Payment required to access this resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "397b5881-5a25-4f54-8e90-08ca5c3612b8",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "map"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<string>\",\n  \"search\": \"<string>\",\n  \"sitemap\": \"include\",\n  \"includeSubdomains\": true,\n  \"ignoreQueryParameters\": true,\n  \"ignoreCache\": false,\n  \"limit\": 5000,\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\"\n    ]\n  },\n  \"timeout\": 60000\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Request rate limit exceeded. Please wait and try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9f8b7eb-9909-4767-bb9f-633ec9aa5d3b",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "map"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<string>\",\n  \"search\": \"<string>\",\n  \"sitemap\": \"include\",\n  \"includeSubdomains\": true,\n  \"ignoreQueryParameters\": true,\n  \"ignoreCache\": false,\n  \"limit\": 5000,\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\"\n    ]\n  },\n  \"timeout\": 60000\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.firecrawl.dev/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "27a75f32-b723-40f4-a303-0b5a0b345fdd",
+    "name": "Firecrawl Account Mapping API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for interacting with Firecrawl services to perform web scraping and crawling tasks.\n\nContact Support:\n Name: Firecrawl Support\n Email: support@firecrawl.dev",
+      "type": "text/plain"
+    }
+  }
+}

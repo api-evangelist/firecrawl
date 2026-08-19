@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Firecrawl Account Mapping API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mapping",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Map multiple URLs based on options",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.firecrawl.dev/v2/map",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Map multiple URLs based on options"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

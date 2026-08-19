@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Firecrawl Account Extraction API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Extraction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Extract structured data from pages using LLMs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.firecrawl.dev/v2/extract",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Extract structured data from pages using LLMs"
+        },
+        {
+          "info": {
+            "name": "Get the status of an extract job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/extract/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the extract job"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Get the status of an extract job"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Firecrawl Account Browser API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Browser",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List browser sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/browser",
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Filter sessions by status"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "List browser sessions"
+        },
+        {
+          "info": {
+            "name": "Create a browser session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.firecrawl.dev/v2/browser",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Create a browser session"
+        },
+        {
+          "info": {
+            "name": "Execute code in a browser session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.firecrawl.dev/v2/browser/:sessionId/execute",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "The browser session ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Execute code in a browser session"
+        },
+        {
+          "info": {
+            "name": "Delete a browser session",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.firecrawl.dev/v2/browser/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "The browser session ID"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Delete a browser session"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

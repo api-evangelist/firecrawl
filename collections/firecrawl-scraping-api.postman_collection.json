@@ -1,0 +1,2510 @@
+{
+  "item": [
+    {
+      "id": "63c90ca6-efb0-4994-8a8a-be9be99d830f",
+      "name": "Scraping",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2b3831e1-3a63-4917-b7ab-427d196bb5cd",
+          "name": "Scrape a single URL and optionally extract information using an LLM",
+          "request": {
+            "name": "Scrape a single URL and optionally extract information using an LLM",
+            "description": {},
+            "url": {
+              "path": [
+                "scrape"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<uri>\",\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "12571bcb-cbb4-455c-9288-082bf441477c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<uri>\",\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"data\": {\n    \"markdown\": \"string\",\n    \"summary\": \"string\",\n    \"html\": \"string\",\n    \"rawHtml\": \"string\",\n    \"screenshot\": \"string\",\n    \"audio\": \"string\",\n    \"links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"actions\": {\n      \"screenshots\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scrapes\": [\n        {\n          \"url\": \"string\",\n          \"html\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"html\": \"string\"\n        }\n      ],\n      \"javascriptReturns\": [\n        {\n          \"type\": \"string\",\n          \"value\": \"\"\n        },\n        {\n          \"type\": \"string\",\n          \"value\": \"\"\n        }\n      ],\n      \"pdfs\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"metadata\": {\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"language\": \"string\",\n      \"sourceURL\": \"https://pTNnGYabHIxadXYjbzIvCroMgkcAgZq.rdxesEa1dU0Os.rdhTFDbS.+KJG3\",\n      \"url\": \"http://YahsgiadGhx.kvgpJaRBPzqCh5BScOP7OL2-qaavSOJLUdYldF1gMRYgt\",\n      \"keywords\": \"string\",\n      \"ogLocaleAlternate\": [\n        \"string\",\n        \"string\"\n      ],\n      \"<any other metadata> \": \"string\",\n      \"statusCode\": 7448,\n      \"contentType\": \"string\",\n      \"error\": \"string\",\n      \"concurrencyLimited\": true,\n      \"concurrencyQueueDurationMs\": 6810.1976100761285\n    },\n    \"warning\": \"string\",\n    \"changeTracking\": {\n      \"previousScrapeAt\": \"1984-01-03T11:23:39.900Z\",\n      \"changeStatus\": \"new\",\n      \"visibility\": \"hidden\",\n      \"diff\": \"string\",\n      \"json\": {}\n    },\n    \"branding\": {\n      \"colorScheme\": \"dark\",\n      \"logo\": \"string\",\n      \"colors\": {\n        \"primary\": \"string\",\n        \"secondary\": \"string\",\n        \"accent\": \"string\",\n        \"background\": \"string\",\n        \"textPrimary\": \"string\",\n        \"textSecondary\": \"string\",\n        \"link\": \"string\",\n        \"success\": \"string\",\n        \"warning\": \"string\",\n        \"error\": \"string\"\n      },\n      \"fonts\": [\n        {\n          \"family\": \"string\"\n        },\n        {\n          \"family\": \"string\"\n        }\n      ],\n      \"typography\": {\n        \"fontFamilies\": {\n          \"primary\": \"string\",\n          \"heading\": \"string\",\n          \"code\": \"string\"\n        },\n        \"fontSizes\": {\n          \"h1\": \"string\",\n          \"h2\": \"string\",\n          \"h3\": \"string\",\n          \"body\": \"string\"\n        },\n        \"fontWeights\": {\n          \"light\": 4038,\n          \"regular\": 2647,\n          \"medium\": 4128,\n          \"bold\": 3508\n        },\n        \"lineHeights\": {\n          \"heading\": \"string\",\n          \"body\": \"string\"\n        }\n      },\n      \"spacing\": {\n        \"baseUnit\": 2060,\n        \"borderRadius\": \"string\",\n        \"padding\": {},\n        \"margins\": {}\n      },\n      \"components\": {\n        \"buttonPrimary\": {\n          \"background\": \"string\",\n          \"textColor\": \"string\",\n          \"borderRadius\": \"string\"\n        },\n        \"buttonSecondary\": {\n          \"background\": \"string\",\n          \"textColor\": \"string\",\n          \"borderColor\": \"string\",\n          \"borderRadius\": \"string\"\n        },\n        \"input\": {}\n      },\n      \"icons\": {},\n      \"images\": {\n        \"logo\": \"string\",\n        \"favicon\": \"string\",\n        \"ogImage\": \"string\"\n      },\n      \"animations\": {},\n      \"layout\": {},\n      \"personality\": {}\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "374bc800-0007-4b76-92dc-712fa948d902",
+              "name": "Payment required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<uri>\",\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Payment required to access this resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5579b2eb-a6ec-42ad-a8d2-9ed045b3172a",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<uri>\",\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Request rate limit exceeded. Please wait and try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54fc45a1-c0a8-4a57-aa1e-7d45843a8496",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"<uri>\",\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"code\": \"UNKNOWN_ERROR\",\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "420c5866-ae70-4887-ae1c-7bebc9e84e64",
+          "name": "Interact with the browser session associated with a scrape job",
+          "request": {
+            "name": "Interact with the browser session associated with a scrape job",
+            "description": {},
+            "url": {
+              "path": [
+                "scrape",
+                ":jobId",
+                "interact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "jobId",
+                  "description": "(Required) The scrape job ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "48b078ef-2f1a-49b6-a061-fdd70890151f",
+              "name": "Code executed successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"stdout\": \"string\",\n  \"result\": \"string\",\n  \"stderr\": \"string\",\n  \"exitCode\": 7964,\n  \"killed\": true,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3e24236-1afa-45a0-a448-9d4a9d4ad60f",
+              "name": "Invalid job ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Invalid job ID format.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d97e1492-8ac8-4df9-81fa-182774c72b5d",
+              "name": "Payment required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Payment required to access this resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d74f9428-da7e-488f-9865-9f5f25653162",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Forbidden.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0eab8b40-92e2-4bae-94f9-17590d9b0043",
+              "name": "Scrape job not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Job not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab459db0-ec0f-4a38-977f-f7b60f2d696f",
+              "name": "Scrape replay context is unavailable or session could not be initialized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Replay context is unavailable for this scrape job. Please rerun the scrape.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0b93de5-fcf4-454d-bf6c-e62049ae72b3",
+              "name": "Scrape browser session has already been destroyed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Gone",
+              "code": 410,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Browser session has been destroyed.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0488adde-fe79-474c-974c-ea19dee99a69",
+              "name": "Too many active browser sessions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"You have reached the maximum number of active browser sessions.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "461dabeb-6678-46c0-98ec-7979e965aa72",
+              "name": "Failed to communicate with browser service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"language\": \"node\",\n  \"timeout\": 30,\n  \"origin\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Gateway",
+              "code": 502,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Failed to execute code in browser session.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8aeb535-511a-41f4-96f7-c347753e7c6d",
+          "name": "Stop the interactive browser session associated with a scrape job",
+          "request": {
+            "name": "Stop the interactive browser session associated with a scrape job",
+            "description": {},
+            "url": {
+              "path": [
+                "scrape",
+                ":jobId",
+                "interact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "jobId",
+                  "description": "(Required) The scrape job ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "71c7612a-54a3-4758-acac-3a7215bd64ff",
+              "name": "Interactive scrape browser session stopped successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c846b6bd-8370-4a76-9965-25e8c4a5f93c",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Forbidden.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba19a519-8695-4e71-a59f-afe1114a0d10",
+              "name": "Interactive scrape browser session not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "scrape",
+                    ":jobId",
+                    "interact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "jobId",
+                      "description": "(Required) The scrape job ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"Browser session not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84080518-2d00-42fe-9267-1a54e1e34755",
+          "name": "Upload and parse a file",
+          "request": {
+            "name": "Upload and parse a file",
+            "description": {},
+            "url": {
+              "path": [
+                "parse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "(Required) The file bytes to parse. Supported extensions: .html, .htm, .pdf, .docx, .doc, .odt, .rtf, .xlsx, .xls."
+                },
+                {
+                  "key": "options",
+                  "value": "{\"formats\":[\"markdown\"],\"onlyMainContent\":true,\"includeTags\":[\"<string>\",\"<string>\"],\"excludeTags\":[\"<string>\",\"<string>\"],\"headers\":\"<object>\",\"timeout\":30000,\"parsers\":[\"pdf\"],\"skipTlsVerification\":true,\"removeBase64Images\":true,\"blockAds\":true,\"proxy\":\"<string>\",\"origin\":\"api\",\"integration\":\"<string>\",\"zeroDataRetention\":false}",
+                  "type": "text",
+                  "contentType": "application/json",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cbcea1da-e08e-49ad-9e81-783d30c9fd0b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The file bytes to parse. Supported extensions: .html, .htm, .pdf, .docx, .doc, .odt, .rtf, .xlsx, .xls.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"formats\":[\"markdown\"],\"onlyMainContent\":true,\"includeTags\":[\"<string>\",\"<string>\"],\"excludeTags\":[\"<string>\",\"<string>\"],\"headers\":\"<object>\",\"timeout\":30000,\"parsers\":[\"pdf\"],\"skipTlsVerification\":true,\"removeBase64Images\":true,\"blockAds\":true,\"proxy\":\"<string>\",\"origin\":\"api\",\"integration\":\"<string>\",\"zeroDataRetention\":false}",
+                      "type": "text",
+                      "contentType": "application/json"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"markdown\": \"string\",\n    \"summary\": \"string\",\n    \"html\": \"string\",\n    \"rawHtml\": \"string\",\n    \"screenshot\": \"string\",\n    \"audio\": \"string\",\n    \"links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"actions\": {\n      \"screenshots\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scrapes\": [\n        {\n          \"url\": \"string\",\n          \"html\": \"string\"\n        },\n        {\n          \"url\": \"string\",\n          \"html\": \"string\"\n        }\n      ],\n      \"javascriptReturns\": [\n        {\n          \"type\": \"string\",\n          \"value\": \"\"\n        },\n        {\n          \"type\": \"string\",\n          \"value\": \"\"\n        }\n      ],\n      \"pdfs\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"metadata\": {\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"language\": \"string\",\n      \"sourceURL\": \"http://nsazRBcsnzzeLpAIJhcDXIFHQm.dfazxqeLm0UqHko9+c\",\n      \"url\": \"http://byBjhRJvKgsVdLXvousCbw.eowxcsaFn2jJcQKQuGRrheRX\",\n      \"keywords\": \"string\",\n      \"ogLocaleAlternate\": [\n        \"string\",\n        \"string\"\n      ],\n      \"<any other metadata> \": \"string\",\n      \"statusCode\": 59,\n      \"contentType\": \"string\",\n      \"error\": \"string\",\n      \"concurrencyLimited\": true,\n      \"concurrencyQueueDurationMs\": 9767.285790709264\n    },\n    \"warning\": \"string\",\n    \"changeTracking\": {\n      \"previousScrapeAt\": \"2000-04-08T00:05:18.661Z\",\n      \"changeStatus\": \"new\",\n      \"visibility\": \"visible\",\n      \"diff\": \"string\",\n      \"json\": {}\n    },\n    \"branding\": {\n      \"colorScheme\": \"dark\",\n      \"logo\": \"string\",\n      \"colors\": {\n        \"primary\": \"string\",\n        \"secondary\": \"string\",\n        \"accent\": \"string\",\n        \"background\": \"string\",\n        \"textPrimary\": \"string\",\n        \"textSecondary\": \"string\",\n        \"link\": \"string\",\n        \"success\": \"string\",\n        \"warning\": \"string\",\n        \"error\": \"string\"\n      },\n      \"fonts\": [\n        {\n          \"family\": \"string\"\n        },\n        {\n          \"family\": \"string\"\n        }\n      ],\n      \"typography\": {\n        \"fontFamilies\": {\n          \"primary\": \"string\",\n          \"heading\": \"string\",\n          \"code\": \"string\"\n        },\n        \"fontSizes\": {\n          \"h1\": \"string\",\n          \"h2\": \"string\",\n          \"h3\": \"string\",\n          \"body\": \"string\"\n        },\n        \"fontWeights\": {\n          \"light\": 8985,\n          \"regular\": 4477,\n          \"medium\": 7944,\n          \"bold\": 676\n        },\n        \"lineHeights\": {\n          \"heading\": \"string\",\n          \"body\": \"string\"\n        }\n      },\n      \"spacing\": {\n        \"baseUnit\": 821,\n        \"borderRadius\": \"string\",\n        \"padding\": {},\n        \"margins\": {}\n      },\n      \"components\": {\n        \"buttonPrimary\": {\n          \"background\": \"string\",\n          \"textColor\": \"string\",\n          \"borderRadius\": \"string\"\n        },\n        \"buttonSecondary\": {\n          \"background\": \"string\",\n          \"textColor\": \"string\",\n          \"borderColor\": \"string\",\n          \"borderRadius\": \"string\"\n        },\n        \"input\": {}\n      },\n      \"icons\": {},\n      \"images\": {\n        \"logo\": \"string\",\n        \"favicon\": \"string\",\n        \"ogImage\": \"string\"\n      },\n      \"animations\": {},\n      \"layout\": {},\n      \"personality\": {}\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c5fbc6c-0f95-4435-8b31-18c8c0541dce",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The file bytes to parse. Supported extensions: .html, .htm, .pdf, .docx, .doc, .odt, .rtf, .xlsx, .xls.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"formats\":[\"markdown\"],\"onlyMainContent\":true,\"includeTags\":[\"<string>\",\"<string>\"],\"excludeTags\":[\"<string>\",\"<string>\"],\"headers\":\"<object>\",\"timeout\":30000,\"parsers\":[\"pdf\"],\"skipTlsVerification\":true,\"removeBase64Images\":true,\"blockAds\":true,\"proxy\":\"<string>\",\"origin\":\"api\",\"integration\":\"<string>\",\"zeroDataRetention\":false}",
+                      "type": "text",
+                      "contentType": "application/json"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"code\": \"BAD_REQUEST\",\n  \"error\": \"Invalid multipart form-data request.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99d9e86d-7882-4018-9e1a-a5b6c765a7b4",
+              "name": "Payment required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The file bytes to parse. Supported extensions: .html, .htm, .pdf, .docx, .doc, .odt, .rtf, .xlsx, .xls.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"formats\":[\"markdown\"],\"onlyMainContent\":true,\"includeTags\":[\"<string>\",\"<string>\"],\"excludeTags\":[\"<string>\",\"<string>\"],\"headers\":\"<object>\",\"timeout\":30000,\"parsers\":[\"pdf\"],\"skipTlsVerification\":true,\"removeBase64Images\":true,\"blockAds\":true,\"proxy\":\"<string>\",\"origin\":\"api\",\"integration\":\"<string>\",\"zeroDataRetention\":false}",
+                      "type": "text",
+                      "contentType": "application/json"
+                    }
+                  ]
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Payment required to access this resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1287ebd0-4753-4422-9fc3-fc12faf64530",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The file bytes to parse. Supported extensions: .html, .htm, .pdf, .docx, .doc, .odt, .rtf, .xlsx, .xls.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"formats\":[\"markdown\"],\"onlyMainContent\":true,\"includeTags\":[\"<string>\",\"<string>\"],\"excludeTags\":[\"<string>\",\"<string>\"],\"headers\":\"<object>\",\"timeout\":30000,\"parsers\":[\"pdf\"],\"skipTlsVerification\":true,\"removeBase64Images\":true,\"blockAds\":true,\"proxy\":\"<string>\",\"origin\":\"api\",\"integration\":\"<string>\",\"zeroDataRetention\":false}",
+                      "type": "text",
+                      "contentType": "application/json"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Request rate limit exceeded. Please wait and try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4d6f600a-dd8e-4ba8-b141-6fffc555514d",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) The file bytes to parse. Supported extensions: .html, .htm, .pdf, .docx, .doc, .odt, .rtf, .xlsx, .xls.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "{\"formats\":[\"markdown\"],\"onlyMainContent\":true,\"includeTags\":[\"<string>\",\"<string>\"],\"excludeTags\":[\"<string>\",\"<string>\"],\"headers\":\"<object>\",\"timeout\":30000,\"parsers\":[\"pdf\"],\"skipTlsVerification\":true,\"removeBase64Images\":true,\"blockAds\":true,\"proxy\":\"<string>\",\"origin\":\"api\",\"integration\":\"<string>\",\"zeroDataRetention\":false}",
+                      "type": "text",
+                      "contentType": "application/json"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"code\": \"UNKNOWN_ERROR\",\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "357492f4-ffb9-44ca-a8a2-4b004288901c",
+          "name": "Scrape multiple URLs and optionally extract information using an LLM",
+          "request": {
+            "name": "Scrape multiple URLs and optionally extract information using an LLM",
+            "description": {},
+            "url": {
+              "path": [
+                "batch",
+                "scrape"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"webhook\": {\n    \"url\": \"<string>\",\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\",\n      \"key_3\": \"<string>\"\n    },\n    \"metadata\": {\n      \"key_0\": false,\n      \"key_1\": false,\n      \"key_2\": \"string\"\n    },\n    \"events\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"maxConcurrency\": \"<integer>\",\n  \"ignoreInvalidURLs\": true,\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e0c97295-086a-4a97-abdb-17255bd0c1fa",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"webhook\": {\n    \"url\": \"<string>\",\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    },\n    \"metadata\": {\n      \"key_0\": 6369.434337339933\n    },\n    \"events\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"maxConcurrency\": \"<integer>\",\n  \"ignoreInvalidURLs\": true,\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"id\": \"string\",\n  \"url\": \"https://EBtXijCwPbUTjp.aid-ft1hOd0w\",\n  \"invalidURLs\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b4a18a0-2cc8-4310-8aab-ac0deef2d0a8",
+              "name": "Payment required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"webhook\": {\n    \"url\": \"<string>\",\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    },\n    \"metadata\": {\n      \"key_0\": 6369.434337339933\n    },\n    \"events\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"maxConcurrency\": \"<integer>\",\n  \"ignoreInvalidURLs\": true,\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Payment required to access this resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2ba57a4-8440-463a-ad3a-f4623a16d429",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"webhook\": {\n    \"url\": \"<string>\",\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    },\n    \"metadata\": {\n      \"key_0\": 6369.434337339933\n    },\n    \"events\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"maxConcurrency\": \"<integer>\",\n  \"ignoreInvalidURLs\": true,\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Request rate limit exceeded. Please wait and try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a903b125-288b-4cc2-a594-fa848cb17391",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"urls\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"webhook\": {\n    \"url\": \"<string>\",\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    },\n    \"metadata\": {\n      \"key_0\": 6369.434337339933\n    },\n    \"events\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"maxConcurrency\": \"<integer>\",\n  \"ignoreInvalidURLs\": true,\n  \"formats\": [\n    \"markdown\"\n  ],\n  \"onlyMainContent\": true,\n  \"onlyCleanContent\": false,\n  \"includeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"excludeTags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"maxAge\": 172800000,\n  \"minAge\": \"<integer>\",\n  \"headers\": \"<object>\",\n  \"waitFor\": 0,\n  \"mobile\": false,\n  \"skipTlsVerification\": true,\n  \"timeout\": 60000,\n  \"parsers\": [\n    \"pdf\"\n  ],\n  \"actions\": [\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"milliseconds\": \"<integer>\"\n    }\n  ],\n  \"location\": {\n    \"country\": \"US\",\n    \"languages\": [\n      \"en-US\",\n      \"en-US\"\n    ]\n  },\n  \"removeBase64Images\": true,\n  \"blockAds\": true,\n  \"proxy\": \"auto\",\n  \"storeInCache\": true,\n  \"lockdown\": false,\n  \"profile\": {\n    \"name\": \"<string>\",\n    \"saveChanges\": true\n  },\n  \"zeroDataRetention\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "82499b39-baf0-493c-a9d7-c88bf415c56f",
+          "name": "Get the status of a batch scrape job",
+          "request": {
+            "name": "Get the status of a batch scrape job",
+            "description": {},
+            "url": {
+              "path": [
+                "batch",
+                "scrape",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The ID of the batch scrape job"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6fffc3e0-5c0a-45dc-94d5-f05b2daadb5d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"total\": 5651,\n  \"completed\": 2640,\n  \"creditsUsed\": 1491,\n  \"expiresAt\": \"1987-02-13T12:14:55.469Z\",\n  \"next\": \"string\",\n  \"data\": [\n    {\n      \"markdown\": \"string\",\n      \"html\": \"string\",\n      \"rawHtml\": \"string\",\n      \"links\": [\n        \"string\",\n        \"string\"\n      ],\n      \"screenshot\": \"string\",\n      \"metadata\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"language\": \"string\",\n        \"sourceURL\": \"https://XpoqhXslREfUcYgVJtGSHDHUy.lfpwyPYUCstiKNlGc,bEw.z8sA3PQrGiE0VwulPAmP-0\",\n        \"url\": \"https://NQ.nkBXnRFllDQbQQ7TkcLJV3xgyY,3dT,ZryEA2q1,ux0Uk4zPKJzman\",\n        \"keywords\": \"string\",\n        \"ogLocaleAlternate\": [\n          \"string\",\n          \"string\"\n        ],\n        \"<any other metadata> \": \"string\",\n        \"statusCode\": 2509,\n        \"error\": \"string\",\n        \"concurrencyLimited\": true,\n        \"concurrencyQueueDurationMs\": 4180.668069485623\n      }\n    },\n    {\n      \"markdown\": \"string\",\n      \"html\": \"string\",\n      \"rawHtml\": \"string\",\n      \"links\": [\n        \"string\",\n        \"string\"\n      ],\n      \"screenshot\": \"string\",\n      \"metadata\": {\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"language\": \"string\",\n        \"sourceURL\": \"https://KYLRFMbHgCVAvlMUkeej.jbwPaRKlJ9ml-lo+4XG\",\n        \"url\": \"https://zIUDbc.nwC+XFaDKznmGDlA9gZGQETNLJ08CIqeLFoqGoo,fHz6+5bkcgchGLq54,lO\",\n        \"keywords\": \"string\",\n        \"ogLocaleAlternate\": [\n          \"string\",\n          \"string\"\n        ],\n        \"<any other metadata> \": \"string\",\n        \"statusCode\": 8234,\n        \"error\": \"string\",\n        \"concurrencyLimited\": false,\n        \"concurrencyQueueDurationMs\": 4602.346929258445\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4a5ab77-697c-4f68-b6ba-0755835a1d08",
+              "name": "Payment required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Payment required to access this resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7bcf35db-d1fa-4980-b878-8a78a530e0c8",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Request rate limit exceeded. Please wait and try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09a56f3a-22e4-4ccf-9547-e61e3edb518e",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0992df69-a581-4910-8c2f-84d163b82d8a",
+          "name": "Cancel a batch scrape job",
+          "request": {
+            "name": "Cancel a batch scrape job",
+            "description": {},
+            "url": {
+              "path": [
+                "batch",
+                "scrape",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The ID of the batch scrape job"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "126613cc-6376-49c8-b73f-355a3c1fb6a5",
+              "name": "Successful cancellation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Batch scrape job successfully cancelled.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9bfb9664-4f41-4559-9027-67867ecff3d8",
+              "name": "Batch scrape job not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Batch scrape job not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b154a0ae-655f-4c18-a0c3-f41b521c5f29",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c274910-5dc3-4060-bd2d-476dea7e838c",
+          "name": "Get the errors of a batch scrape job",
+          "request": {
+            "name": "Get the errors of a batch scrape job",
+            "description": {},
+            "url": {
+              "path": [
+                "batch",
+                "scrape",
+                ":id",
+                "errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) The ID of the batch scrape job"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4144ceb0-05ba-4a2a-9061-5d42fd544a4c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"id\": \"string\",\n      \"timestamp\": \"string\",\n      \"url\": \"string\",\n      \"error\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"timestamp\": \"string\",\n      \"url\": \"string\",\n      \"error\": \"string\"\n    }\n  ],\n  \"robotsBlocked\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b34b23c-dce0-436c-9422-9ac2b5a8f45e",
+              "name": "Payment required",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Payment required to access this resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34367a85-0f33-415b-8b37-180bc89e66d7",
+              "name": "Too many requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Request rate limit exceeded. Please wait and try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1263ff97-6a5f-406f-931e-0879f742c095",
+              "name": "Server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "batch",
+                    "scrape",
+                    ":id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) The ID of the batch scrape job"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"An unexpected error occurred on the server.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.firecrawl.dev/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0c0cb2ca-d696-4ac1-95b7-d7c80b21751c",
+    "name": "Firecrawl Account Scraping API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for interacting with Firecrawl services to perform web scraping and crawling tasks.\n\nContact Support:\n Name: Firecrawl Support\n Email: support@firecrawl.dev",
+      "type": "text/plain"
+    }
+  }
+}

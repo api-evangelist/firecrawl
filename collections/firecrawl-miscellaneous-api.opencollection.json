@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Firecrawl Account Miscellaneous API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Miscellaneous",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Metrics about your team's scrape queue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.firecrawl.dev/v2/team/queue-status",
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Metrics about your team's scrape queue"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
