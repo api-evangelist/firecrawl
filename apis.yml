@@ -31,7 +31,7 @@ tags:
   - AI
   - Markdown
 url: https://raw.githubusercontent.com/api-evangelist/firecrawl/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: firecrawl:firecrawl-account-api
   name: Firecrawl Account API
