@@ -28,6 +28,13 @@ tags:
   - Data Extraction
   - Scraping
   - URLs
+  - Artificial Intelligence
+  - Markdown
+tags_raw:
+  - Crawling
+  - Data Extraction
+  - Scraping
+  - URLs
   - AI
   - Markdown
 url: https://raw.githubusercontent.com/api-evangelist/firecrawl/refs/heads/main/apis.yml
@@ -53,6 +60,8 @@ apis:
   humanURL: https://docs.firecrawl.dev/api-reference/introduction
   baseURL: https://api.firecrawl.dev/v2
   tags:
+  - Agents
+  tags_raw:
   - Agent
   properties:
   - type: OpenAPI
@@ -136,7 +145,8 @@ apis:
   description: The Miscellaneous API from Firecrawl — 1 operation(s) for miscellaneous.
   humanURL: https://docs.firecrawl.dev/api-reference/introduction
   baseURL: https://api.firecrawl.dev/v2
-  tags:
+  tags: []
+  tags_raw:
   - Miscellaneous
   properties:
   - type: OpenAPI
