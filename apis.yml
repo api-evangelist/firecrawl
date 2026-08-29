@@ -5,6 +5,18 @@ description: >-
   capabilities. Firecrawl is an API service that takes a URL, crawls it, and converts it into clean markdown or
   structured data. We crawl all accessible subpages and give you clean data for each. No sitemap required.
 kind: contract
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
