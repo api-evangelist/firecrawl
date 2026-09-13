@@ -1,0 +1,25 @@
+generated: '2026-09-11'
+method: probed
+source: https://mcp.firecrawl.dev/mcp
+status: published
+server:
+  name: firecrawl
+  transport: http
+  url: https://mcp.firecrawl.dev/mcp
+deployment:
+  mode: remote
+  endpoint: https://mcp.firecrawl.dev/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-11'
+  source: docs-check 2026-09-11 (endpoint found in the provider's own documentation, then probed)
+tools_count: 3
+tools:
+- name: firecrawl_scrape
+  description: ''
+- name: firecrawl_search
+  description: ''
+- name: firecrawl_parse
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
+authorship: provider
