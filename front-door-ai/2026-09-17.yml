@@ -1,0 +1,36 @@
+# Front Door AI Index — firecrawl — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: firecrawl
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.firecrawl.dev
+  final_host: www.firecrawl.dev
+  ownership: own
+  owner: firecrawl
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 67
+  host_score: 67
+  density: 23.54
+  words: 2846
+  tiers:
+    agentic: 22
+    core: 42
+    model: 3
+  ambiguous: 40
+  top_terms:
+    AI: 37
+    agent: 36
+    AI agent: 10
+    MCP: 5
+    LLMs: 4
+    Claude: 3
+    RAG: 3
+    prompts: 3
+    smart: 3
+    AI assistant: 1
+    ML: 1
+    intelligence: 1

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Firecrawl Account Browser API
+  title: Firecrawl Browser API
   version: v2
   description: API for interacting with Firecrawl services to perform web scraping and crawling tasks.
   contact:
@@ -212,27 +212,32 @@ paths:
                   success:
                     type: boolean
                   stdout:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     description: Standard output from the code execution
                   result:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     description: Standard output (alias for stdout)
                   stderr:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     description: Standard error output from the code execution
                   exitCode:
-                    type: integer
-                    nullable: true
+                    type:
+                    - integer
+                    - 'null'
                     description: Exit code of the executed process
                   killed:
                     type: boolean
                     description: Whether the process was killed due to timeout
                   error:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     description: Error message if the code raised an exception
         '402':
           description: Payment required

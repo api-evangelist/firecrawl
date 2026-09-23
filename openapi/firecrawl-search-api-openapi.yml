@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Firecrawl Account Search API
+  title: Firecrawl Search API
   version: v2
   description: API for interacting with Firecrawl services to perform web scraping and crawling tasks.
   contact:
@@ -184,16 +184,19 @@ paths:
                               type: string
                               description: URL of the search result
                             markdown:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Markdown content if scraping was requested
                             html:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: HTML content if requested in formats
                             rawHtml:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Raw HTML content if requested in formats
                             links:
                               type: array
@@ -201,12 +204,14 @@ paths:
                                 type: string
                               description: Links found if requested in formats
                             screenshot:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Screenshot URL if requested in formats. Screenshots expire after 24 hours and can no longer be downloaded.
                             audio:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Signed URL to the extracted MP3 audio file if `audio` is in `formats`. The signed URL expires after 1 hour.
                             metadata:
                               type: object
@@ -224,8 +229,9 @@ paths:
                                 statusCode:
                                   type: integer
                                 error:
-                                  type: string
-                                  nullable: true
+                                  type:
+                                  - string
+                                  - 'null'
                       images:
                         type: array
                         items:
@@ -273,16 +279,19 @@ paths:
                               type: integer
                               description: Position of the article
                             markdown:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Markdown content if scraping was requested
                             html:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: HTML content if requested in formats
                             rawHtml:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Raw HTML content if requested in formats
                             links:
                               type: array
@@ -290,12 +299,14 @@ paths:
                                 type: string
                               description: Links found if requested in formats
                             screenshot:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Screenshot URL if requested in formats. Screenshots expire after 24 hours and can no longer be downloaded.
                             audio:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                               description: Signed URL to the extracted MP3 audio file if `audio` is in `formats`. The signed URL expires after 1 hour.
                             metadata:
                               type: object
@@ -313,12 +324,14 @@ paths:
                                 statusCode:
                                   type: integer
                                 error:
-                                  type: string
-                                  nullable: true
+                                  type:
+                                  - string
+                                  - 'null'
                     description: The search results. The arrays available will depend on the sources you specified in the request. By default, the `web` array will be returned.
                   warning:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                     description: Warning message if any issues occurred
                   id:
                     type: string
@@ -480,8 +493,9 @@ components:
               type: string
               description: Prompt to use for change tracking when using 'json' mode. If not provided, the default prompt will be used.
             tag:
-              type: string
-              nullable: true
+              type:
+              - string
+              - 'null'
               default: null
               description: Tag to use for change tracking. Tags can separate change tracking history into separate "branches", where change tracking with a specific tagwill only compare to scrapes made in the same tag. If not provided, the default tag (null) will be used.
           required:

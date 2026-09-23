@@ -1,16 +1,7 @@
 {
   "provider": "firecrawl",
   "sources": [
-    "firecrawl-account-api-openapi.yml",
-    "firecrawl-agent-api-openapi.yml",
-    "firecrawl-billing-api-openapi.yml",
-    "firecrawl-browser-api-openapi.yml",
-    "firecrawl-crawling-api-openapi.yml",
-    "firecrawl-extraction-api-openapi.yml",
-    "firecrawl-mapping-api-openapi.yml",
-    "firecrawl-miscellaneous-api-openapi.yml",
-    "firecrawl-scraping-api-openapi.yml",
-    "firecrawl-search-api-openapi.yml"
+    "_original/firecrawl-openapi-original.json"
   ],
   "outputs": [
     "firecrawl-account-api-openapi.yml",
@@ -27,6 +18,31 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "firecrawl-openapi-original.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "firecrawl-openapi-original.json: declared missing tag: Account",
+    "firecrawl-openapi-original.json: declared missing tag: Agent",
+    "firecrawl-openapi-original.json: declared missing tag: Billing",
+    "firecrawl-openapi-original.json: declared missing tag: Browser",
+    "firecrawl-openapi-original.json: declared missing tag: Crawling",
+    "firecrawl-openapi-original.json: declared missing tag: Extraction",
+    "firecrawl-openapi-original.json: declared missing tag: Mapping",
+    "firecrawl-openapi-original.json: declared missing tag: Miscellaneous",
+    "firecrawl-openapi-original.json: declared missing tag: Scraping",
+    "firecrawl-openapi-original.json: declared missing tag: Search",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "firecrawl-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-agent-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-billing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-browser-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-crawling-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-extraction-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-mapping-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-miscellaneous-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-scraping-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "firecrawl-search-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

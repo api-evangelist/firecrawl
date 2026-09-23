@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Firecrawl Account Extraction API
+  title: Firecrawl Extraction API
   version: v2
   description: API for interacting with Firecrawl services to perform web scraping and crawling tasks.
   contact:
@@ -117,6 +117,41 @@ paths:
                 $ref: '#/components/schemas/ExtractStatusResponse'
 components:
   schemas:
+    ExtractResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        id:
+          type: string
+        invalidURLs:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          description: If ignoreInvalidURLs is true, this is an array containing the invalid URLs that were specified in the request. If there were no invalid URLs, this will be an empty array. If ignoreInvalidURLs is false, this field will be undefined.
+    ExtractStatusResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: object
+        status:
+          type: string
+          enum:
+          - completed
+          - processing
+          - failed
+          - cancelled
+          description: The current status of the extract job
+        expiresAt:
+          type: string
+          format: date-time
+        tokensUsed:
+          type: integer
+          description: The number of tokens used by the extract job. Only available if the job is completed.
     Formats:
       type: array
       items:
@@ -240,8 +275,9 @@ components:
               type: string
               description: Prompt to use for change tracking when using 'json' mode. If not provided, the default prompt will be used.
             tag:
-              type: string
-              nullable: true
+              type:
+              - string
+              - 'null'
               default: null
               description: Tag to use for change tracking. Tags can separate change tracking history into separate "branches", where change tracking with a specific tagwill only compare to scrapes made in the same tag. If not provided, the default tag (null) will be used.
           required:
@@ -268,40 +304,6 @@ components:
       description: 'Output formats to include in the response. You can specify one or more formats, either as strings (e.g., `''markdown''`) or as objects with additional options (e.g., `{ type: ''json'', schema: {...} }`). Some formats require specific options to be set. Example: `[''markdown'', { type: ''json'', schema: {...} }]`.'
       default:
       - markdown
-    ExtractStatusResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        data:
-          type: object
-        status:
-          type: string
-          enum:
-          - completed
-          - processing
-          - failed
-          - cancelled
-          description: The current status of the extract job
-        expiresAt:
-          type: string
-          format: date-time
-        tokensUsed:
-          type: integer
-          description: The number of tokens used by the extract job. Only available if the job is completed.
-    ExtractResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        id:
-          type: string
-        invalidURLs:
-          type: array
-          nullable: true
-          items:
-            type: string
-          description: If ignoreInvalidURLs is true, this is an array containing the invalid URLs that were specified in the request. If there were no invalid URLs, this will be an empty array. If ignoreInvalidURLs is false, this field will be undefined.
     ScrapeOptions:
       type: object
       properties:

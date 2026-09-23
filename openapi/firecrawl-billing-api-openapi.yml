@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Firecrawl Account Billing API
+  title: Firecrawl Billing API
   version: v2
   description: API for interacting with Firecrawl services to perform web scraping and crawling tasks.
   contact:
@@ -45,17 +45,19 @@ paths:
                         description: Number of credits in the plan. This does not include coupon credits, credit packs, or auto recharge credits.
                         example: 500000
                       billingPeriodStart:
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                         format: date-time
                         description: Start date of the billing period. null if using the free plan
                         example: '2025-01-01T00:00:00Z'
-                        nullable: true
                       billingPeriodEnd:
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                         format: date-time
                         description: End date of the billing period. null if using the free plan
                         example: '2025-01-31T23:59:59Z'
-                        nullable: true
         '404':
           description: Credit usage information not found
           content:
@@ -125,9 +127,10 @@ paths:
                           description: End date of the billing period
                           example: '2025-01-31T23:59:59Z'
                         apiKey:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                           description: Name of the API key used for the billing period. null if byApiKey is false (default)
-                          nullable: true
                         totalCredits:
                           type: integer
                           description: Total number of credits used in the billing period
@@ -176,17 +179,19 @@ paths:
                         description: Number of tokens in the plan. This does not include coupon tokens.
                         example: 500000
                       billingPeriodStart:
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                         format: date-time
                         description: Start date of the billing period. null if using the free plan
                         example: '2025-01-01T00:00:00Z'
-                        nullable: true
                       billingPeriodEnd:
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                         format: date-time
                         description: End date of the billing period. null if using the free plan
                         example: '2025-01-31T23:59:59Z'
-                        nullable: true
         '404':
           description: Token usage information not found
           content:
@@ -256,9 +261,10 @@ paths:
                           description: End date of the billing period
                           example: '2025-01-31T23:59:59Z'
                         apiKey:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                           description: Name of the API key used for the billing period. null if byApiKey is false (default)
-                          nullable: true
                         totalTokens:
                           type: integer
                           description: Total number of tokens used in the billing period
