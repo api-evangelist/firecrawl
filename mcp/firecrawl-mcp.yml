@@ -16,10 +16,18 @@ deployment:
 tools_count: 3
 tools:
 - name: firecrawl_scrape
-  description: ''
+  description: Retrieve and extract content from one supplied URL through Firecrawl. Use this when the
+    request identifies a page and needs its content or defined fields. It can return markdown, HTML, links,
+    screenshots, branding data, a targeted answer,
 - name: firecrawl_search
-  description: ''
+  description: Search web, news, or image sources and return ranked results. Operators include quoted
+    phrases, `-term`, `site:host`, `inurl:term`, `intitle:term`, and `related:host`; the set is non-exhaustive.
+    `includeDomains` and `excludeDomains` are mu
 - name: firecrawl_parse
-  description: ''
+  description: Parse one supported document into markdown, HTML, links, summary, targeted answers, or
+    JSON matching a schema. Supported inputs include common HTML, PDF, Word, RTF, OpenDocument, and spreadsheet
+    files; PDF parsing can be bounded with `pdfO
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
