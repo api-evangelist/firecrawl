@@ -117,27 +117,6 @@ paths:
                 $ref: '#/components/schemas/ExtractStatusResponse'
 components:
   schemas:
-    ExtractStatusResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        data:
-          type: object
-        status:
-          type: string
-          enum:
-          - completed
-          - processing
-          - failed
-          - cancelled
-          description: The current status of the extract job
-        expiresAt:
-          type: string
-          format: date-time
-        tokensUsed:
-          type: integer
-          description: The number of tokens used by the extract job. Only available if the job is completed.
     ExtractResponse:
       type: object
       properties:
@@ -152,6 +131,158 @@ components:
           items:
             type: string
           description: If ignoreInvalidURLs is true, this is an array containing the invalid URLs that were specified in the request. If there were no invalid URLs, this will be an empty array. If ignoreInvalidURLs is false, this field will be undefined.
+    Formats:
+      type: array
+      items:
+        oneOf:
+        - type: object
+          title: Markdown
+          properties:
+            type:
+              type: string
+              enum:
+              - markdown
+          required:
+          - type
+        - type: object
+          title: Summary
+          properties:
+            type:
+              type: string
+              enum:
+              - summary
+          required:
+          - type
+        - type: object
+          title: HTML
+          properties:
+            type:
+              type: string
+              enum:
+              - html
+          required:
+          - type
+        - type: object
+          title: Raw HTML
+          properties:
+            type:
+              type: string
+              enum:
+              - rawHtml
+          required:
+          - type
+        - type: object
+          title: Links
+          properties:
+            type:
+              type: string
+              enum:
+              - links
+          required:
+          - type
+        - type: object
+          title: Images
+          properties:
+            type:
+              type: string
+              enum:
+              - images
+          required:
+          - type
+        - type: object
+          title: Screenshot
+          properties:
+            type:
+              type: string
+              enum:
+              - screenshot
+            fullPage:
+              type: boolean
+              description: Whether to capture a full-page screenshot (ignores viewport.height) or limit to the current viewport.
+              default: false
+            quality:
+              type: integer
+              description: The quality of the screenshot, from 1 to 100. 100 is the highest quality.
+            viewport:
+              type: object
+              properties:
+                width:
+                  type: integer
+                  description: The width of the viewport in pixels
+                height:
+                  type: integer
+                  description: The height of the viewport in pixels
+              required:
+              - width
+              - height
+          required:
+          - type
+        - type: object
+          title: JSON
+          properties:
+            type:
+              type: string
+              enum:
+              - json
+            schema:
+              type: object
+              description: The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).
+            prompt:
+              type: string
+              description: The prompt to use for the JSON output
+          required:
+          - type
+        - type: object
+          title: Change Tracking
+          properties:
+            type:
+              type: string
+              enum:
+              - changeTracking
+            modes:
+              type: array
+              items:
+                type: string
+                enum:
+                - git-diff
+                - json
+              description: The mode to use for change tracking. 'git-diff' provides a detailed diff, and 'json' compares extracted JSON data.
+            schema:
+              type: object
+              description: Schema for JSON extraction when using 'json' mode. Defines the structure of data to extract and compare. Must conform to [JSON Schema](https://json-schema.org/).
+            prompt:
+              type: string
+              description: Prompt to use for change tracking when using 'json' mode. If not provided, the default prompt will be used.
+            tag:
+              type:
+              - string
+              - 'null'
+              default: null
+              description: Tag to use for change tracking. Tags can separate change tracking history into separate "branches", where change tracking with a specific tagwill only compare to scrapes made in the same tag. If not provided, the default tag (null) will be used.
+          required:
+          - type
+        - type: object
+          title: Branding
+          properties:
+            type:
+              type: string
+              enum:
+              - branding
+          required:
+          - type
+        - type: object
+          title: Audio
+          description: Extract audio (MP3) from supported video URLs, e.g. YouTube. Returns a signed GCS URL.
+          properties:
+            type:
+              type: string
+              enum:
+              - audio
+          required:
+          - type
+      description: 'Output formats to include in the response. You can specify one or more formats, either as strings (e.g., `''markdown''`) or as objects with additional options (e.g., `{ type: ''json'', schema: {...} }`). Some formats require specific options to be set. Example: `[''markdown'', { type: ''json'', schema: {...} }]`.'
+      default:
+      - markdown
     ScrapeOptions:
       type: object
       properties:
@@ -484,158 +615,27 @@ components:
               description: When true, browser state is saved back to the profile when the interact session stops. Set to false to load existing data without writing. Only one saving session is allowed at a time.
           required:
           - name
-    Formats:
-      type: array
-      items:
-        oneOf:
-        - type: object
-          title: Markdown
-          properties:
-            type:
-              type: string
-              enum:
-              - markdown
-          required:
-          - type
-        - type: object
-          title: Summary
-          properties:
-            type:
-              type: string
-              enum:
-              - summary
-          required:
-          - type
-        - type: object
-          title: HTML
-          properties:
-            type:
-              type: string
-              enum:
-              - html
-          required:
-          - type
-        - type: object
-          title: Raw HTML
-          properties:
-            type:
-              type: string
-              enum:
-              - rawHtml
-          required:
-          - type
-        - type: object
-          title: Links
-          properties:
-            type:
-              type: string
-              enum:
-              - links
-          required:
-          - type
-        - type: object
-          title: Images
-          properties:
-            type:
-              type: string
-              enum:
-              - images
-          required:
-          - type
-        - type: object
-          title: Screenshot
-          properties:
-            type:
-              type: string
-              enum:
-              - screenshot
-            fullPage:
-              type: boolean
-              description: Whether to capture a full-page screenshot (ignores viewport.height) or limit to the current viewport.
-              default: false
-            quality:
-              type: integer
-              description: The quality of the screenshot, from 1 to 100. 100 is the highest quality.
-            viewport:
-              type: object
-              properties:
-                width:
-                  type: integer
-                  description: The width of the viewport in pixels
-                height:
-                  type: integer
-                  description: The height of the viewport in pixels
-              required:
-              - width
-              - height
-          required:
-          - type
-        - type: object
-          title: JSON
-          properties:
-            type:
-              type: string
-              enum:
-              - json
-            schema:
-              type: object
-              description: The schema to use for the JSON output. Must conform to [JSON Schema](https://json-schema.org/).
-            prompt:
-              type: string
-              description: The prompt to use for the JSON output
-          required:
-          - type
-        - type: object
-          title: Change Tracking
-          properties:
-            type:
-              type: string
-              enum:
-              - changeTracking
-            modes:
-              type: array
-              items:
-                type: string
-                enum:
-                - git-diff
-                - json
-              description: The mode to use for change tracking. 'git-diff' provides a detailed diff, and 'json' compares extracted JSON data.
-            schema:
-              type: object
-              description: Schema for JSON extraction when using 'json' mode. Defines the structure of data to extract and compare. Must conform to [JSON Schema](https://json-schema.org/).
-            prompt:
-              type: string
-              description: Prompt to use for change tracking when using 'json' mode. If not provided, the default prompt will be used.
-            tag:
-              type:
-              - string
-              - 'null'
-              default: null
-              description: Tag to use for change tracking. Tags can separate change tracking history into separate "branches", where change tracking with a specific tagwill only compare to scrapes made in the same tag. If not provided, the default tag (null) will be used.
-          required:
-          - type
-        - type: object
-          title: Branding
-          properties:
-            type:
-              type: string
-              enum:
-              - branding
-          required:
-          - type
-        - type: object
-          title: Audio
-          description: Extract audio (MP3) from supported video URLs, e.g. YouTube. Returns a signed GCS URL.
-          properties:
-            type:
-              type: string
-              enum:
-              - audio
-          required:
-          - type
-      description: 'Output formats to include in the response. You can specify one or more formats, either as strings (e.g., `''markdown''`) or as objects with additional options (e.g., `{ type: ''json'', schema: {...} }`). Some formats require specific options to be set. Example: `[''markdown'', { type: ''json'', schema: {...} }]`.'
-      default:
-      - markdown
+    ExtractStatusResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: object
+        status:
+          type: string
+          enum:
+          - completed
+          - processing
+          - failed
+          - cancelled
+          description: The current status of the extract job
+        expiresAt:
+          type: string
+          format: date-time
+        tokensUsed:
+          type: integer
+          description: The number of tokens used by the extract job. Only available if the job is completed.
   securitySchemes:
     bearerAuth:
       type: http
