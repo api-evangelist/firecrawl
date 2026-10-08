@@ -200,6 +200,10 @@ apis:
   - type: Authentication
     url: https://docs.firecrawl.dev/api-reference/introduction
 common:
+  - type: Plans
+    url: plans/firecrawl-plans-pricing.yml
+  - type: FinOps
+    url: finops/firecrawl-finops.yml
   - type: AgenticAccess
     url: agentic-access/firecrawl-agentic-access.yml
   - type: VulnerabilityDisclosure
