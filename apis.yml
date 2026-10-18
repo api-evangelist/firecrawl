@@ -42,7 +42,7 @@ x-docs-platform-checked: 2026-10-03
 tags:
   - Crawling
   - Data Extraction
-  - Scraping
+  - Web Scraping
   - URLs
   - Artificial Intelligence
   - Markdown
@@ -177,6 +177,8 @@ apis:
   humanURL: https://docs.firecrawl.dev/api-reference/introduction
   baseURL: https://api.firecrawl.dev/v2
   tags:
+  - Web Scraping
+  tags_raw:
   - Scraping
   properties:
   - type: OpenAPI
