@@ -132,6 +132,197 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Agent Skills (own GitHub org)
+  partner: null
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: Agent Skills package
+  evidence: https://github.com/firecrawl/anydoc
+  channel: provider-built
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: own-repo
+  degree: skill-repo
+  report_only: true
+  agent_skills:
+    org: firecrawl
+    current: true
+    repos:
+    - repo: firecrawl/anydoc
+      archived: false
+      lapsed: false
+      pushed: '2026-10-20'
+    - repo: firecrawl/cli
+      archived: false
+      lapsed: false
+      pushed: '2026-10-20'
+    - repo: firecrawl/firecrawl-workflows
+      archived: false
+      lapsed: false
+      pushed: '2026-10-18'
+    - repo: firecrawl/skills
+      archived: false
+      lapsed: false
+      pushed: '2026-10-20'
+    - repo: firecrawl/web-agent
+      archived: false
+      lapsed: false
+      pushed: '2026-04-19'
+  contract_reference:
+    register: 'provider''s own GitHub org (GitHub REST API: repo + git tree holds SKILL.md)'
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-repo
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: skills.sh
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Agent Skills register
+  evidence: https://www.skills.sh/firecrawl/anydoc
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - firecrawl/anydoc
+    - firecrawl/cli
+    - firecrawl/firecrawl-workflows
+    - firecrawl/skills
+    repo_verified: true
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: skills.sh (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - convert-documents-to-markdown
+    - firecrawl
+    - firecrawl-agent
+    - firecrawl-alexandria
+    - firecrawl-browser
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: SkillsMP (skillsmp.com)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Agent Skills register
+  evidence: https://skillsmp.com/creators/firecrawl/anydoc
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - firecrawl
+    - firecrawl/anydoc
+    - firecrawl/skills
+    - firecrawl/web-agent
+    repo_verified: true
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: SkillsMP (skillsmp.com) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - agent-core-src-skills-definitions-e-commerce
+    - skills-convert-documents-to-markdown
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: officialskills.sh
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Agent Skills register
+  evidence: https://officialskills.sh/firecrawl/skills
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - firecrawl/skills
+    repo_verified: true
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: officialskills.sh (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - firecrawl-build
+    - firecrawl-build-interact
+    - firecrawl-build-onboarding
+    - firecrawl-build-scrape
+    - firecrawl-build-search
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: VoltAgent awesome-agent-skills (community list)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Agent Skills register
+  evidence: https://github.com/VoltAgent/awesome-agent-skills
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - firecrawl/skills
+    repo_verified: true
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: VoltAgent awesome-agent-skills (community list) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - firecrawl-build
+    - firecrawl-build-interact
+    - firecrawl-build-onboarding
+    - firecrawl-build-scrape
+    - firecrawl-build-search
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
 generated: '2026-10-14'
 method: searched
 checked:
@@ -143,5 +334,11 @@ checked:
 - https://registry.modelcontextprotocol.io/v0/servers
 - https://zapier.com/api/v4/apps/
 - stripe/integrations/stripe-integration-edges.yml
+- https://api.github.com
+- https://claude-plugins.dev/sitemap.xml
+- https://github.com/VoltAgent/awesome-agent-skills
+- https://officialskills.sh/sitemap.xml
+- https://skillsmp.com/sitemap.xml
+- https://www.skills.sh/sitemap.xml
 source:
 - stripe/integrations/stripe-integration-edges.yml

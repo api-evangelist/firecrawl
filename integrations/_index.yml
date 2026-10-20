@@ -120,3 +120,124 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: firecrawl-agent-skills-own-github-org
+  label: Agent Skills (own GitHub org)
+  partner_name: Agent Skills (own GitHub org)
+  category: Agent Skills package
+  type: register
+  channel: provider-built
+  evidence: https://github.com/firecrawl/anydoc
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: 'provider''s own GitHub org (GitHub REST API: repo + git tree holds SKILL.md)'
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-repo
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: firecrawl-skills-sh
+  label: skills.sh
+  partner_name: skills.sh
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://www.skills.sh/firecrawl/anydoc
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: skills.sh (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - convert-documents-to-markdown
+    - firecrawl
+    - firecrawl-agent
+    - firecrawl-alexandria
+    - firecrawl-browser
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: firecrawl-skillsmp-skillsmp-com
+  label: SkillsMP (skillsmp.com)
+  partner_name: SkillsMP (skillsmp.com)
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://skillsmp.com/creators/firecrawl/anydoc
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: SkillsMP (skillsmp.com) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - agent-core-src-skills-definitions-e-commerce
+    - skills-convert-documents-to-markdown
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: firecrawl-officialskills-sh
+  label: officialskills.sh
+  partner_name: officialskills.sh
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://officialskills.sh/firecrawl/skills
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: officialskills.sh (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - firecrawl-build
+    - firecrawl-build-interact
+    - firecrawl-build-onboarding
+    - firecrawl-build-scrape
+    - firecrawl-build-search
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: firecrawl-voltagent-awesome-agent-skills-community-list
+  label: VoltAgent awesome-agent-skills (community list)
+  partner_name: VoltAgent awesome-agent-skills (community list)
+  category: Agent Skills register
+  type: register
+  channel: standard-directory
+  evidence: https://github.com/VoltAgent/awesome-agent-skills
+  source: edge
+  relationship: compatible
+  contract_reference:
+    register: VoltAgent awesome-agent-skills (community list) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: firecrawl
+    matched_by: org-profile-domain:firecrawl.dev
+    sample_skills:
+    - firecrawl-build
+    - firecrawl-build-interact
+    - firecrawl-build-onboarding
+    - firecrawl-build-scrape
+    - firecrawl-build-search
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
