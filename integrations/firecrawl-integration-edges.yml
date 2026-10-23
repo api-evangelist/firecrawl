@@ -358,6 +358,66 @@ edges:
   detected: '2026-10-22'
   detected_by: mirror-platform-listings.py
   category: Raycast Store extension (first-party)
+- partner_name: Arch User Repository (AUR)
+  partner: null
+  partner_match: null
+  type: register
+  direction: provider-built
+  category: official CLI (Arch User Repository (AUR))
+  evidence: https://aur.archlinux.org/packages/firecrawl-cli
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: Arch User Repository (AUR) (public package index)
+    spec_file: null
+    packages:
+    - name: firecrawl-cli
+      kind: aur
+      version: 1.26.18-1
+      released: '2026-10-20'
+      released_field: AUR LastModified
+      out_of_date: false
+      lapsed: false
+      page: https://aur.archlinux.org/packages/firecrawl-cli
+      upstream: https://github.com/firecrawl/cli
+      cli: 'AUR description: Command-line interface for Firecrawl - scrape, crawl, and extract data from any '
+      repo_leg: github-org:firecrawl
+      publisher_leg: artifact-github-org:firecrawl
+      matched_by: github-org
+    - name: pdf-inspector
+      kind: aur
+      version: 1.25.2-1
+      released: '2026-09-28'
+      released_field: AUR LastModified
+      out_of_date: false
+      lapsed: false
+      page: https://aur.archlinux.org/packages/pdf-inspector
+      upstream: https://github.com/firecrawl/pdf-inspector
+      cli: 'AUR description: Native CLI tools for PDF classification and Markdown extraction'
+      repo_leg: github-org:firecrawl
+      publisher_leg: artifact-github-org:firecrawl
+      matched_by: github-org
+    - name: pdf-inspector-ocr
+      kind: aur
+      version: 1.25.2-1
+      released: '2026-09-28'
+      released_field: AUR LastModified
+      out_of_date: false
+      lapsed: false
+      page: https://aur.archlinux.org/packages/pdf-inspector-ocr
+      upstream: https://github.com/firecrawl/pdf-inspector
+      cli: 'AUR description: Native CLI tools for PDF classification and Markdown extraction with OCR'
+      repo_leg: github-org:firecrawl
+      publisher_leg: artifact-github-org:firecrawl
+      matched_by: github-org
+    current: true
+    signal_note: 'the provider''s own command-line tool packaged for Arch Linux (community-maintained PKGBUILD whose
+      upstream and source artifact are the provider''s): distribution, not an integration; lapsed = flagged out-of-date
+      or not updated in 24 months'
+    detected_by: sweep-aur-vendor-cli-packages.py
+    detected: '2026-10-23'
+  detected_by: sweep-aur-vendor-cli-packages.py
+  first_seen: '2026-10-23'
 generated: '2026-10-14'
 method: searched
 checked:
@@ -377,5 +437,8 @@ checked:
 - https://www.skills.sh/sitemap.xml
 - vercel/integrations/vercel-integration-edges.yml
 - raycast/integrations/raycast-integration-edges.yml
+- https://aur.archlinux.org/cgit/aur.git/tree/.SRCINFO
+- https://aur.archlinux.org/packages-meta-ext-v1.json.gz
+- https://aur.archlinux.org/rpc/v5/info
 source:
 - stripe/integrations/stripe-integration-edges.yml
